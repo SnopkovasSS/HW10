@@ -13,3 +13,23 @@ public class Main {
         }
     }
 }
+public class App {
+    public static <Author> void main(String[] args) {
+        Author author1 = new Author();
+        Author author2 = new Author();
+
+        Book book1 = new Book("Война и мир", author1, 1869);
+        Book book2 = new Book("Преступление и наказание", author2, 1866);
+
+        System.out.println(book1.toString());
+        System.out.println(book2.toString());
+
+        // Изменим год публикации
+        book1.setPublicationYear(1870);
+        System.out.println("Обновлённый год публикации: " + book1.getPublicationYear());
+
+        // Сравнение авторов и книг
+        System.out.println("Автор 1 равен автору 2? " + author1.equals(author2));
+        System.out.println("Книга 1 равна книге 2? " + book1.equals(book2));
+    }
+}
